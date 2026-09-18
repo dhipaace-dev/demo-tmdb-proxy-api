@@ -7,7 +7,7 @@ import (
 )
 
 const targetServer = "https://api.themoviedb.org"
-const API_KEY = "bf5c57d57d1c81706c6ef4794e8d753e"
+const apiKey = "bf5c57d57d1c81706c6ef4794e8d753e"
 
 func ProxyHandler(w http.ResponseWriter, r *http.Request) {
 	//apiKey := os.Getenv("TMDB_API_KEY")
@@ -38,7 +38,7 @@ func ProxyHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Add TMDB API key
 	query := req.URL.Query()
-	query.Set("api_key", API_KEY)
+	query.Set("api_key", apiKey)
 	req.URL.RawQuery = query.Encode()
 
 	client := &http.Client{}
